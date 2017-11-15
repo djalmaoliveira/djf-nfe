@@ -3,7 +3,8 @@ djf-nfe
 
 [![Build Status](https://travis-ci.org/djalmaoliveira/djf-nfe.svg?branch=master)](https://travis-ci.org/djalmaoliveira/djf-nfe)
 
-Simples parser para XML da Nota fiscal eletrônica (NFe).
+Simples parser para XML da Nota fiscal eletrônica (NFe), usando javascript.
+
 Atenção: A biblioteca não cobre todos os campos definidos na NFe, se não encontrar algum campo faça uma contribuição enviando um pull request com a implementação.
 
 O que a biblioteca oferece
