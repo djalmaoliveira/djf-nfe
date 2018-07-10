@@ -204,6 +204,8 @@ module.exports.item = function (test) {
   test.equal(icms.valorIcmsST(), '4.71')
   test.equal(icms.origem(), '3')
   test.equal(icms.csosn(), '')
+  test.equal(icms.porcentagemMVAST(), '101.1100')
+  test.equal(icms.modalidadeBCST(), '4')
 
   test.equal(typeof item.imposto().ipi(), 'object')
   var ipi = item.imposto().ipi()

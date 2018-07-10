@@ -336,6 +336,14 @@ function NfeModel (content) {
       return value(xml.tagValue('CEST'))
     },
 
+    porcentagemMVAST: function () {
+      return value(xml.tagValue('pMVAST'))
+    },
+
+    modalidadeBCST: function () {
+      return value(xml.tagValue('modBCST'))
+    },
+
     transporte: function () {
       return value(xml.tagValue('transp'))
     },
