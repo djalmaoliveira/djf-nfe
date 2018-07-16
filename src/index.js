@@ -194,7 +194,6 @@ function NfeModel (content) {
       return value(xml.tagValue('obsCont', 'xCampo'))
     },
 
-
     serie: function () {
       return value(xml.tagValue('serie'))
     },
@@ -302,6 +301,10 @@ function NfeModel (content) {
 
     valorOutrasDespesas: function () {
       return value(xml.tagValue('vOutro'))
+    },
+
+    codigoANP: function () {
+      return value(xml.tagValue('cProdANP'))
     },
 
     indicadorTotal: function () {
