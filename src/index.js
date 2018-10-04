@@ -243,6 +243,42 @@ function NfeModel (content) {
       return value(xml.tagValue('vAliqProd'))
     },
 
+    valorFCP: function () {
+      return value(xml.tagValue('vFCP'))
+    },
+
+    valorFCPST: function () {
+      return value(xml.tagValue('vFCPST'))
+    },
+
+    valorFCPSTRetido: function () {
+      return value(xml.tagValue('vFCPSTRet'))
+    },
+
+    porcentagemFCP: function () {
+      return value(xml.tagValue('pFCP'))
+    },
+
+    porcentagemFCPST: function () {
+      return value(xml.tagValue('pFCPST'))
+    },
+
+    porcentagemFCPSTRetido: function () {
+      return value(xml.tagValue('pFCPSTRet'))
+    },
+
+    baseCalculoFCP: function () {
+      return value(xml.tagValue('vBCFCP'))
+    },
+
+    baseCalculoFCPST: function () {
+      return value(xml.tagValue('vBCFCPST'))
+    },
+
+    baseCalculoFCPSTRetido: function () {
+      return value(xml.tagValue('vBCFCPSTRet'))
+    },
+
     porcentagemCOFINS: function () {
       return value(xml.tagValue('pCOFINS'))
     },
