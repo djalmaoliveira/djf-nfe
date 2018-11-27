@@ -482,11 +482,11 @@ function NfeModel (content) {
     },
 
     baseCalculoIcmsST: function () {
-      return value(xml.tagValue(['vBCST', 'vBCSTRet']))
+      return value(xml.tagValue(['vBCST']))
     },
 
     valorIcmsST: function () {
-      return value(xml.tagValue(['vST', 'vICMSST', 'vICMSSTRet']))
+      return value(xml.tagValue(['vST', 'vICMSST']))
     },
 
     valorII: function () {
@@ -546,7 +546,7 @@ function NfeModel (content) {
       return value(xml.tagValue('vDup'))
     }
 
-  /*
+    /*
 
    : function()   {
       return xml.tagValue('marca');
