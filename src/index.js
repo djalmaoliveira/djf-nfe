@@ -485,8 +485,16 @@ function NfeModel (content) {
       return value(xml.tagValue(['vBCST']))
     },
 
+    baseCalculoIcmsSTRetido: function () {
+      return value(xml.tagValue(['vBCSTRet']))
+    },
+
     valorIcmsST: function () {
       return value(xml.tagValue(['vST', 'vICMSST']))
+    },
+
+    valorIcmsSTRetido: function () {
+      return value(xml.tagValue(['vICMSSTRet']))
     },
 
     valorII: function () {
