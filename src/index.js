@@ -219,6 +219,10 @@ function NfeModel (content) {
       return value(xml.tagValue('xProd'))
     },
 
+    informacoesProduto: function () {
+      return value(xml.tagValue('infAdProd'))
+    },
+
     ean: function () {
       return value(xml.tagValue('cEAN'))
     },

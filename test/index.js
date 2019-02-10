@@ -193,6 +193,7 @@ module.exports.item = function (test) {
   test.equal(item.valorOutrasDespesas(), '')
   test.equal(item.indicadorTotal(), '1')
   test.equal(item.codigoANP(), '620505001')
+  test.equal(item.informacoesProduto(), 'Cod. Forn BISVIT003')
 
   // imposto
   test.equal(typeof item.imposto(), 'object')

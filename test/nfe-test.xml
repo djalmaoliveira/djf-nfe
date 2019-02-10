@@ -132,6 +132,7 @@
                         </COFINSAliq>
                     </COFINS>
                 </imposto>
+                <infAdProd>Cod. Forn BISVIT003</infAdProd>
             </det>
             <det nItem="2">
                 <prod>
@@ -185,6 +186,7 @@
                         </COFINSAliq>
                     </COFINS>
                 </imposto>
+                <infAdProd>Cod. Forn BISRECH001</infAdProd>
             </det>
             <total>
                 <ICMSTot>
