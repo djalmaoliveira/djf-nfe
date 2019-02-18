@@ -157,6 +157,10 @@ function NfeModel (content) {
       return value(xml.tagValue('IEST'))
     },
 
+    codigoRegimeTributario: function () {
+      return value(xml.tagValue('CRT'))
+    },
+
     informacoesProtocolo: function () {
       return value(xml.tagValue('infProt'))
     },

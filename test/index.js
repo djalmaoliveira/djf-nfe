@@ -115,6 +115,7 @@ module.exports.informacoesEmitente = function (test) {
   test.equal(emitente.inscricaoMunicipal(), '')
   test.equal(emitente.inscricaoEstadual(), 'ISENTO')
   test.equal(emitente.inscricaoEstadualST(), '')
+  test.equal(emitente.codigoRegimeTributario(), '3')
 
   test.equal(typeof emitente.endereco(), 'object')
   var endereco = emitente.endereco()
