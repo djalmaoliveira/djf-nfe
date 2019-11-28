@@ -40,7 +40,7 @@ describe('NFe', function () {
       assert.strictEqual(protocolo.protocolo(), '000000000000001')
       assert.strictEqual(protocolo.chave(), '31060243816719000108550000000010001234567890')
       assert.strictEqual(protocolo.tipoAmbiente(), '2')
-      assert.strictEqual(protocolo.codigoStatusResposta(), 100)
+      assert.strictEqual(protocolo.codigoStatusResposta(), '100')
     })
   })
 

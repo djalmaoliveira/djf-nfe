@@ -30,7 +30,7 @@ function NfeModel (content) {
     },
 
     codigoStatusResposta: function () {
-      return value(xml.tagValue('cStat') ? parseInt(xml.tagValue('cStat'), 10) : xml.tagValue('cStat'))
+      return value(xml.tagValue('cStat') ? xml.tagValue('cStat') : xml.tagValue('cStat'))
     },
 
     dataEmissao: function () {
