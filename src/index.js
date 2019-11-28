@@ -235,6 +235,14 @@ function NfeModel (content) {
       return value(xml.tagValue('NCM'))
     },
 
+    codigoBeneficioFiscal: function () {
+      return value(xml.tagValue('cBenef'))
+    },
+
+    numeroFCI: function () {
+      return value(xml.tagValue('nFCI'))
+    },
+
     cfop: function () {
       return value(xml.tagValue('CFOP'))
     },

@@ -187,6 +187,8 @@ describe('NFe', function () {
       assert.strictEqual(item.ncm(), '87089100')
       assert.strictEqual(item.cest(), '')
       assert.strictEqual(item.cfop(), '5405')
+      assert.strictEqual(item.codigoBeneficioFiscal(), 'SEM CBENEF')
+      assert.strictEqual(item.numeroFCI(), '86600455-AA27-4CA7-96A9-8C6877EB0C09')
       assert.strictEqual(item.unidadeComercial(), 'UND')
       assert.strictEqual(item.valorUnitario(), '140.0000000000')
       assert.strictEqual(item.unidadeTributavel(), 'UND')

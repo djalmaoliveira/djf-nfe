@@ -66,6 +66,7 @@
                     <cEAN>0000000000000</cEAN>
                     <xProd>BISCOITO VITAMINADO</xProd>
                     <NCM>87089100</NCM>
+                    <cBenef>SEM CBENEF</cBenef>
                     <CFOP>5405</CFOP>
                     <uCom>UND</uCom>
                     <qCom>1.0000</qCom>
@@ -76,6 +77,7 @@
                     <qTrib>1.0000</qTrib>
                     <vUnTrib>140.0000000000</vUnTrib>
                     <indTot>1</indTot>
+                    <nFCI>86600455-AA27-4CA7-96A9-8C6877EB0C09</nFCI>
                     <comb>
                         <cProdANP>620505001</cProdANP>
                         <UFCons>AL</UFCons>
@@ -140,6 +142,7 @@
                     <cEAN>0000000000010</cEAN>
                     <xProd>BISCOITO RECHEADO</xProd>
                     <NCM>34056700</NCM>
+                    <cBenef>RJ801004</cBenef>
                     <CFOP>5405</CFOP>
                     <uCom>UND</uCom>
                     <qCom>1.0000</qCom>
@@ -150,6 +153,7 @@
                     <qTrib>1.0000</qTrib>
                     <vUnTrib>140.0000000000</vUnTrib>
                     <indTot>1</indTot>
+                    <nFCI>86600455-AA27-4CA7-96A9-8C6877EB0C09</nFCI>
                 </prod>
                 <imposto>
                     <ICMS>
