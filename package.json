@@ -1,10 +1,10 @@
 {
   "name": "djf-nfe",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "NFe xml parser",
   "main": "src/index.js",
   "scripts": {
-    "test": "nodeunit test/"
+    "test": "mocha test/"
   },
   "keywords": [
     "NFe",
@@ -20,11 +20,11 @@
     "url": "https://github.com/djalmaoliveira/djf-nfe/issues"
   },
   "devDependencies": {
-    "nodeunit": "^0.11.2"
+    "mocha": "^6.2.2"
   },
   "author": "Djalma Oliveira",
   "license": "MIT",
   "dependencies": {
-    "djf-xml": "^1.0.10"
+    "djf-xml": "^1.0.11"
   }
 }
