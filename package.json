@@ -20,7 +20,7 @@
     "url": "https://github.com/djalmaoliveira/djf-nfe/issues"
   },
   "devDependencies": {
-    "mocha": "^6.2.2"
+    "mocha": "^11.1.0"
   },
   "author": "Djalma Oliveira",
   "license": "MIT",
