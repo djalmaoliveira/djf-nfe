@@ -1,6 +1,6 @@
 {
   "name": "djf-nfe",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "NFe xml parser",
   "main": "src/index.js",
   "scripts": {
