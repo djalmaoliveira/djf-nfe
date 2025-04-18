@@ -1,5 +1,5 @@
-var NFe = require('../src')
-var assert = require('assert')
+const NFe = require('../src')
+const assert = require('assert')
 const fs = require('fs')
 const path = require('path')
 
@@ -10,12 +10,12 @@ function fixture () {
 describe('NFe', function () {
   describe('informacoesNFe', function () {
     it('deveria recuperar informações de identificação da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.informacoesNFe(), 'object')
       assert.strictEqual(typeof nfe.identificacaoNFe(), 'object')
 
-      var info = nfe.identificacaoNFe()
+      const info = nfe.identificacaoNFe()
 
       assert.strictEqual(info.naturezaOperacao(), 'VENDA MERC.ADQ.SUBST.TRIB.')
       assert.strictEqual(info.nrNota(), '100')
@@ -31,10 +31,10 @@ describe('NFe', function () {
 
   describe('informacoesProtocolo', function () {
     it('deveria recuperar informações do protocolo da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.informacoesProtocolo(), 'object')
-      var protocolo = nfe.informacoesProtocolo()
+      const protocolo = nfe.informacoesProtocolo()
 
       assert.strictEqual(protocolo.dataHoraRecebimento(), '2011-07-20T15:49:31')
       assert.strictEqual(protocolo.protocolo(), '000000000000001')
@@ -46,15 +46,15 @@ describe('NFe', function () {
 
   describe('cobrança', function () {
     it('deveria recuperar informações de cobrança da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.cobranca(), 'object')
-      var cobranca = nfe.cobranca()
+      const cobranca = nfe.cobranca()
 
       assert.strictEqual(cobranca.nrDuplicatas(), 1)
 
       assert.strictEqual(typeof cobranca.duplicata(1), 'object')
-      var duplicata = cobranca.duplicata(1)
+      const duplicata = cobranca.duplicata(1)
 
       assert.strictEqual(duplicata.numeroDuplicata(), '59080/01')
       assert.strictEqual(duplicata.vencimentoDuplicata(), '2011-07-13')
@@ -64,17 +64,17 @@ describe('NFe', function () {
 
   describe('transporte', function () {
     it('deveria recuperar informações de transporte da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.transporte(), 'object')
-      var transporte = nfe.transporte()
+      const transporte = nfe.transporte()
 
       assert.strictEqual(transporte.modalidadeFrete(), '0')
       assert.strictEqual(transporte.modalidadeFreteTexto(), 'EMITENTE')
 
       // transportadora
       assert.strictEqual(typeof transporte.transportador(), 'object')
-      var transportadora = transporte.transportador()
+      const transportadora = transporte.transportador()
       assert.strictEqual(transportadora.nome(), 'Transporte SA')
       assert.strictEqual(transportadora.cnpj(), '01234567000179')
       assert.strictEqual(transportadora.inscricaoEstadual(), '012345678')
@@ -84,13 +84,13 @@ describe('NFe', function () {
 
       // veiculo
       assert.strictEqual(typeof transporte.veiculo(), 'object')
-      var veiculo = transporte.veiculo()
+      const veiculo = transporte.veiculo()
       assert.strictEqual(veiculo.antt(), '000000')
       assert.strictEqual(veiculo.placa(), 'ZZZ00001')
 
       // volume
       assert.strictEqual(typeof transporte.volume(), 'object')
-      var volume = transporte.volume()
+      const volume = transporte.volume()
 
       assert.strictEqual(volume.numeracao(), '1,00')
       assert.strictEqual(volume.especie(), 'UNIDADE')
@@ -103,11 +103,11 @@ describe('NFe', function () {
 
   describe('informacoesEmitente', function () {
     it('deveria recuperar informações do emitente da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.emitente(), 'object')
 
-      var emitente = nfe.emitente()
+      const emitente = nfe.emitente()
 
       assert.strictEqual(emitente.nome(), 'Empresa LTDA')
       assert.strictEqual(emitente.fantasia(), 'Super Empresa')
@@ -121,7 +121,7 @@ describe('NFe', function () {
       assert.strictEqual(emitente.codigoRegimeTributario(), '3')
 
       assert.strictEqual(typeof emitente.endereco(), 'object')
-      var endereco = emitente.endereco()
+      const endereco = emitente.endereco()
 
       assert.strictEqual(endereco.uf(), 'SP')
       assert.strictEqual(endereco.cep(), '12500090')
@@ -139,11 +139,11 @@ describe('NFe', function () {
 
   describe('informacoesDestinatario', function () {
     it('deveria recuperar informações do destinatério da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.destinatario(), 'object')
 
-      var destinatario = nfe.destinatario()
+      const destinatario = nfe.destinatario()
 
       assert.strictEqual(destinatario.nome(), 'NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL')
       assert.strictEqual(destinatario.fantasia(), '')
@@ -156,7 +156,7 @@ describe('NFe', function () {
       assert.strictEqual(destinatario.inscricaoEstadualST(), '')
 
       assert.strictEqual(typeof destinatario.endereco(), 'object')
-      var endereco = destinatario.endereco()
+      const endereco = destinatario.endereco()
 
       assert.strictEqual(endereco.uf(), 'SP')
       assert.strictEqual(endereco.cep(), '12556000')
@@ -174,13 +174,19 @@ describe('NFe', function () {
 
   describe('item', function () {
     it('deveria recuperar informações dos itens/produtos da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(nfe.nrItens(), 2)
 
+      // item
       assert.strictEqual(typeof nfe.item(1), 'object')
-      var item = nfe.item(1)
+      const item = nfe.item(1)
 
+      const item2 = nfe.item(2)
+      assert.strictEqual(typeof item2, 'object')
+      assert.strictEqual(item2.numeroItem(), '2')
+
+      assert.strictEqual(item.numeroItem(), '1')
       assert.strictEqual(item.codigo(), '3')
       assert.strictEqual(item.descricao(), 'BISCOITO VITAMINADO')
       assert.strictEqual(item.ean(), '0000000000000')
@@ -200,11 +206,13 @@ describe('NFe', function () {
       assert.strictEqual(item.indicadorTotal(), '1')
       assert.strictEqual(item.codigoANP(), '620505001')
       assert.strictEqual(item.informacoesProduto(), 'Cod. Forn BISVIT003')
+      assert.strictEqual(item.pedido(), '75061653')
+      assert.strictEqual(item.numeroItemPedido(), '1')
 
       // imposto
       assert.strictEqual(typeof item.imposto(), 'object')
       assert.strictEqual(typeof item.imposto().icms(), 'object')
-      var icms = item.imposto().icms()
+      const icms = item.imposto().icms()
       assert.strictEqual(icms.cst(), '10')
       assert.strictEqual(icms.baseCalculo(), '14.63')
       assert.strictEqual(icms.porcetagemIcms(), '4.0000')
@@ -227,21 +235,21 @@ describe('NFe', function () {
       assert.strictEqual(icms.baseCalculoFCPSTRetido(), '100.00')
 
       assert.strictEqual(typeof item.imposto().ipi(), 'object')
-      var ipi = item.imposto().ipi()
+      const ipi = item.imposto().ipi()
       assert.strictEqual(ipi.cst(), '99')
       assert.strictEqual(ipi.baseCalculo(), '140.00')
       assert.strictEqual(ipi.valorIPI(), '0.00')
       assert.strictEqual(ipi.porcentagemIPI(), '0.00')
 
       assert.strictEqual(typeof item.imposto().pis(), 'object')
-      var pis = item.imposto().pis()
+      const pis = item.imposto().pis()
       assert.strictEqual(pis.cst(), '01')
       assert.strictEqual(pis.baseCalculo(), '140.00')
       assert.strictEqual(pis.valorPIS(), '0.00')
       assert.strictEqual(pis.porcentagemPIS(), '0.00')
 
       assert.strictEqual(typeof item.imposto().cofins(), 'object')
-      var cofins = item.imposto().cofins()
+      const cofins = item.imposto().cofins()
       assert.strictEqual(cofins.cst(), '01')
       assert.strictEqual(cofins.baseCalculo(), '140.00')
       assert.strictEqual(cofins.porcentagemCOFINS(), '0.00')
@@ -251,11 +259,11 @@ describe('NFe', function () {
 
   describe('total', function () {
     it('deveria recuperar informações de total da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.totalIcmsNota(), 'object')
       assert.strictEqual(typeof nfe.total(), 'object')
-      var total = nfe.total()
+      const total = nfe.total()
       assert.strictEqual(total.baseCalculoIcms(), '0.00')
       assert.strictEqual(total.valorIcms(), '0.00')
       assert.strictEqual(total.valorIcmsDesonerado(), '')
@@ -279,10 +287,10 @@ describe('NFe', function () {
 
   describe('servico', function () {
     it('deveria recuperar informações de serviço da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(typeof nfe.total().servico(), 'object')
-      var servico = nfe.servico()
+      const servico = nfe.servico()
       assert.strictEqual(servico.valorTotalISS(), '2.00')
       assert.strictEqual(servico.valorTotalServicoNaoIncidente(), '100.00')
     })
@@ -290,7 +298,7 @@ describe('NFe', function () {
 
   describe('informacoesAdicionais', function () {
     it('deveria recuperar informações adicionais da NFe', function () {
-      var nfe = NFe(fixture())
+      const nfe = NFe(fixture())
 
       assert.strictEqual(nfe.informacoesComplementares(), 'OBS:.')
       assert.strictEqual(nfe.informacoesFisco(), 'Imposto recolhido')
@@ -299,12 +307,30 @@ describe('NFe', function () {
       assert.strictEqual(nfe.observacao(1).campoObservacao(), 'ObsCont')
     })
   })
+
+  describe('tags', function () {
+    it('deveria recuperar informações da tag "xMotivo"', function () {
+      const nfe = NFe(fixture())
+
+      const tag = nfe.tags('xMotivo')
+      assert.strictEqual(typeof tag, 'string')
+      assert.strictEqual(tag, 'Autorizado o uso da NF-e')
+    })
+
+    it('deveria recuperar informações do atributo "xmlns" da tag "Signature"', function () {
+      const nfe = NFe(fixture())
+
+      const tagAttribute = nfe.tags('Signature', 'xmlns')
+      assert.strictEqual(typeof tagAttribute, 'string')
+      assert.strictEqual(tagAttribute, 'http://www.w3.org/2000/09/xmldsig#')
+    })
+  })
 })
 
 describe('NFe inválida', function () {
   describe('NfeInvalida', function () {
     it('deveria retornar vazio quando o xml da NFe é inválido', function () {
-      var nfe = NFe('')
+      const nfe = NFe('')
       assert.strictEqual(nfe.chave(), '')
     })
   })

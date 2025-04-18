@@ -4,14 +4,23 @@ module.exports = NfeModel
 
 function NfeModel (content) {
   content = !content ? '' : content
-  var xml = (typeof content !== 'object') ? xmlModel(content) : content
+  const xml = (typeof content !== 'object') ? xmlModel(content) : content
 
-  var value = function (result) {
+  const value = function (result) {
     result = !result ? '' : result
     return (typeof result !== 'object') ? result : NfeModel(result)
   }
 
   return {
+    /**
+     * Usado para recuperar informações de tags/atributos que ainda não foram implementadas nesta lib.
+     *
+     * @param      {string}  tagName    The tag name
+     * @param      {string}  attribute  The attribute
+     */
+    tags: function (tagName, attribute) {
+      return value(xml.tagValue(tagName, attribute))
+    },
 
     dataHoraRecebimento: function () {
       return value(xml.tagValue('dhRecbto'))
@@ -38,7 +47,7 @@ function NfeModel (content) {
     },
 
     dataEntradaSaida: function () {
-      var dt = xml.tagValue(['dhSaiEnt', 'dSaiEnt'])
+      const dt = xml.tagValue(['dhSaiEnt', 'dSaiEnt'])
       if (dt) {
         return (dt)
       }
@@ -58,9 +67,9 @@ function NfeModel (content) {
     },
 
     operacao: function () {
-      var tipo = {
-        '0': 'entrada',
-        '1': 'saída'
+      const tipo = {
+        0: 'entrada',
+        1: 'saída'
       }
       return value(tipo[this.tipoOperacao()])
     },
@@ -213,6 +222,10 @@ function NfeModel (content) {
     item: function (nr) {
       nr = parseInt(nr, 10) - 1
       return value(xmlModel(xml.tagGroup('det')[nr]))
+    },
+
+    numeroItem: function () {
+      return value(xml.tagValue('det', 'nItem'))
     },
 
     codigo: function () {
@@ -408,7 +421,7 @@ function NfeModel (content) {
     },
 
     modalidadeFreteTexto: function () {
-      var modalidades = {
+      const modalidades = {
         0: 'EMITENTE',
         1: 'DESTINATARIO',
         2: 'TERCEIROS',
@@ -568,26 +581,15 @@ function NfeModel (content) {
 
     valorDuplicata: function () {
       return value(xml.tagValue('vDup'))
+    },
+
+    pedido: function () {
+      return value(xml.tagValue('xPed'))
+    },
+
+    numeroItemPedido: function () {
+      return value(xml.tagValue('nItemPed'))
     }
-
-    /*
-
-   : function()   {
-      return xml.tagValue('marca');
-    },
-
-   : function()   {
-      return xml.tagValue('marca');
-    },
-
-   : function()   {
-      return xml.tagValue('marca');
-    },
-
-   : function()   {
-      return xml.tagValue('marca');
-    },
-  */
 
   }
 }

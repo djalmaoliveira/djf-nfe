@@ -82,6 +82,8 @@
                         <cProdANP>620505001</cProdANP>
                         <UFCons>AL</UFCons>
                     </comb>
+                    <xPed>75061653</xPed>
+                    <nItemPed>1</nItemPed>
                 </prod>
                 <imposto>
                     <ICMS>
@@ -154,6 +156,8 @@
                     <vUnTrib>140.0000000000</vUnTrib>
                     <indTot>1</indTot>
                     <nFCI>86600455-AA27-4CA7-96A9-8C6877EB0C09</nFCI>
+                    <xPed>75061653</xPed>
+                    <nItemPed>2</nItemPed>
                 </prod>
                 <imposto>
                     <ICMS>
