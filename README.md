@@ -1,5 +1,5 @@
 # djf-nfe
-[![Build Status](https://travis-ci.org/djalmaoliveira/djf-nfe.svg?branch=master)](https://travis-ci.org/djalmaoliveira/djf-nfe) ![Version](https://img.shields.io/npm/v/djf-nfe.svg)
+![Version](https://img.shields.io/npm/v/djf-nfe.svg)
 
 Simples parser para XML da Nota fiscal eletrônica (NFe), usando javascript.
 
