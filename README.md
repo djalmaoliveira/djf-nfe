@@ -1,5 +1,5 @@
 # djf-nfe
-![Version](https://img.shields.io/npm/v/djf-nfe.svg)
+![Test](https://github.com/djalmaoliveira/djf-nfe/actions/workflows/node.js.yml/badge.svg) ![Version](https://img.shields.io/npm/v/djf-nfe.svg)
 
 Simples parser para XML da Nota fiscal eletrônica (NFe), usando javascript.
 
