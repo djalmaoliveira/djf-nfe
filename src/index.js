@@ -388,6 +388,58 @@ function NfeModel (content) {
       return value(xml.tagValue('COFINS'))
     },
 
+    ibscbs: function () {
+      return value(xml.tagValue('IBSCBS'))
+    },
+
+    classificacaoTributaria: function () {
+      return value(xml.tagValue('cClassTrib'))
+    },
+
+    grupoIBSCBS: function () {
+      return value(xml.tagValue('gIBSCBS'))
+    },
+
+    grupoIBSUf: function () {
+      return value(xml.tagValue('gIBSUF'))
+    },
+
+    porcentagemIBSUf: function () {
+      return value(xml.tagValue('pIBSUF'))
+    },
+
+    valorIBSUf: function () {
+      return value(xml.tagValue('vIBSUF'))
+    },
+
+    grupoIBSMunicipio: function () {
+      return value(xml.tagValue('gIBSMun'))
+    },
+
+    porcentagemIBSMunicipio: function () {
+      return value(xml.tagValue('pIBSMun'))
+    },
+
+    valorIBSMunicipio: function () {
+      return value(xml.tagValue('vIBSMun'))
+    },
+
+    valorIBS: function () {
+      return value(xml.tagValue('vIBS'))
+    },
+
+    grupoCBS: function () {
+      return value(xml.tagValue('gCBS'))
+    },
+
+    porcentagemCBS: function () {
+      return value(xml.tagValue('pCBS'))
+    },
+
+    valorCBS: function () {
+      return value(xml.tagValue('vCBS'))
+    },
+
     csosn: function () {
       return value(xml.tagValue('CSOSN'))
     },
@@ -488,6 +540,34 @@ function NfeModel (content) {
 
     total: function () {
       return value(xml.tagValue('total'))
+    },
+
+    totalIBSCBSNota: function () {
+      return value(xml.tagValue('IBSCBSTot'))
+    },
+
+    baseCalculoIBSCBS: function () {
+      return value(xml.tagValue('vBCIBSCBS'))
+    },
+
+    grupoIBS: function () {
+      return value(xml.tagValue('gIBS'))
+    },
+
+    valorDiferimento: function () {
+      return value(xml.tagValue('vDif'))
+    },
+
+    valorDevolucaoTributos: function () {
+      return value(xml.tagValue('vDevTrib'))
+    },
+
+    valorCreditoPresumido: function () {
+      return value(xml.tagValue('vCredPres'))
+    },
+
+    valorCreditoPresumidoCondicaoSuspensiva: function () {
+      return value(xml.tagValue('vCredPresCondSus'))
     },
 
     icms: function () {

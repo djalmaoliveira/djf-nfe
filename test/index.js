@@ -254,6 +254,32 @@ describe('NFe', function () {
       assert.strictEqual(cofins.baseCalculo(), '140.00')
       assert.strictEqual(cofins.porcentagemCOFINS(), '0.00')
       assert.strictEqual(cofins.valorCOFINS(), '0.00')
+
+      // IBSCBS
+      const ibscbs = item.imposto().ibscbs()
+      assert.strictEqual(typeof ibscbs, 'object')
+      assert.strictEqual(ibscbs.cst(), '000')
+      assert.strictEqual(ibscbs.classificacaoTributaria(), '000001')
+
+      const grupoIBSCBS = ibscbs.grupoIBSCBS()
+      assert.strictEqual(typeof grupoIBSCBS, 'object')
+      assert.strictEqual(grupoIBSCBS.baseCalculo(), '140.00')
+      assert.strictEqual(grupoIBSCBS.valorIBS(), '0.14')
+
+      const grupoIBSUf = grupoIBSCBS.grupoIBSUf()
+      assert.strictEqual(typeof grupoIBSUf, 'object')
+      assert.strictEqual(grupoIBSUf.porcentagemIBSUf(), '0.1000')
+      assert.strictEqual(grupoIBSUf.valorIBSUf(), '0.14')
+
+      const ibsMunicipio = grupoIBSCBS.grupoIBSMunicipio()
+      assert.strictEqual(typeof ibsMunicipio, 'object')
+      assert.strictEqual(ibsMunicipio.porcentagemIBSMunicipio(), '0.0000')
+      assert.strictEqual(ibsMunicipio.valorIBSMunicipio(), '0.00')
+
+      const grupoCBS = grupoIBSCBS.grupoCBS()
+      assert.strictEqual(typeof grupoCBS, 'object')
+      assert.strictEqual(grupoCBS.porcentagemCBS(), '0.9000')
+      assert.strictEqual(grupoCBS.valorCBS(), '1.26')
     })
   })
 
@@ -282,6 +308,33 @@ describe('NFe', function () {
       assert.strictEqual(total.valorOutrasDespesas(), '0.00')
       assert.strictEqual(total.valorNota(), '280.00')
       assert.strictEqual(total.valorTotalTributos(), '')
+
+      // total IBSCBS
+      const totalIBSCBS = total.totalIBSCBSNota()
+      assert.strictEqual(typeof totalIBSCBS, 'object')
+      assert.strictEqual(totalIBSCBS.baseCalculoIBSCBS(), '2942.70')
+
+      const grupoIBS = total.grupoIBS()
+      assert.strictEqual(typeof grupoIBS, 'object')
+      assert.strictEqual(grupoIBS.grupoIBSUf().valorDiferimento(), '0.00')
+      assert.strictEqual(grupoIBS.grupoIBSUf().valorDevolucaoTributos(), '0.00')
+      assert.strictEqual(grupoIBS.grupoIBSUf().valorIBSUf(), '2.95')
+
+      assert.strictEqual(grupoIBS.grupoIBSMunicipio().valorDiferimento(), '0.00')
+      assert.strictEqual(grupoIBS.grupoIBSMunicipio().valorDevolucaoTributos(), '0.00')
+      assert.strictEqual(grupoIBS.grupoIBSMunicipio().valorIBSMunicipio(), '0.00')
+
+      assert.strictEqual(grupoIBS.valorIBS(), '2.95')
+      assert.strictEqual(grupoIBS.valorCreditoPresumido(), '0.00')
+      assert.strictEqual(grupoIBS.valorCreditoPresumidoCondicaoSuspensiva(), '0.00')
+
+      const grupoCBS = total.grupoCBS()
+      assert.strictEqual(typeof grupoCBS, 'object')
+      assert.strictEqual(grupoCBS.valorDiferimento(), '0.00')
+      assert.strictEqual(grupoCBS.valorDevolucaoTributos(), '0.00')
+      assert.strictEqual(grupoCBS.valorCBS(), '26.49')
+      assert.strictEqual(grupoCBS.valorCreditoPresumido(), '0.00')
+      assert.strictEqual(grupoCBS.valorCreditoPresumidoCondicaoSuspensiva(), '0.00')
     })
   })
 
