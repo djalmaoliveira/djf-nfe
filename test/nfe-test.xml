@@ -19,6 +19,7 @@
         <cDV>0</cDV>
         <tpAmb>2</tpAmb>
         <finNFe>1</finNFe>
+        <tpNFDebito>06</tpNFDebito>
         <procEmi>0</procEmi>
         <verProc>4.5.0.0</verProc>
       </ide>

@@ -38,6 +38,18 @@ function NfeModel (content) {
       return value(xml.tagValue('tpAmb'))
     },
 
+    finalidadeNota: function () {
+      return value(xml.tagValue('finNFe'))
+    },
+
+    tipoNotaDebito: function () {
+      return value(xml.tagValue('tpNFDebito'))
+    },
+
+    tipoNotaCredito: function () {
+      return value(xml.tagValue('tpNFCredito'))
+    },
+
     codigoStatusResposta: function () {
       return value(xml.tagValue('cStat') ? xml.tagValue('cStat') : xml.tagValue('cStat'))
     },
